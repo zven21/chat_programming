@@ -2,7 +2,9 @@ defmodule ChatProgrammingWeb.ErrorJSONTest do
   use ChatProgrammingWeb.ConnCase, async: true
 
   test "renders 404" do
-    assert ChatProgrammingWeb.ErrorJSON.render("404.json", %{}) == %{errors: %{detail: "Not Found"}}
+    assert ChatProgrammingWeb.ErrorJSON.render("404.json", %{}) == %{
+             errors: %{detail: "Not Found"}
+           }
   end
 
   test "renders 500" do
