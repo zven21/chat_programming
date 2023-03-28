@@ -12,9 +12,19 @@
 
 alias ChatProgramming.{Space, Card}
 
-{:ok, space_sui} = Space.create(%{name: "sui", description: "Sui is a boundless platform to build rich and dynamic on-chain assets from gaming to finance."})
+{:ok, space_sui} =
+  Space.create(%{
+    name: "sui",
+    description:
+      "Sui is a boundless platform to build rich and dynamic on-chain assets from gaming to finance."
+  })
 
-{:ok, space_aptos} = Space.create(%{name: "aptos", description: "Committed to developing products and applications on the Aptos blockchain that redefine the web3 user experience."})
+{:ok, space_aptos} =
+  Space.create(%{
+    name: "aptos",
+    description:
+      "Committed to developing products and applications on the Aptos blockchain that redefine the web3 user experience."
+  })
 
 Card.create(%{
   title: "Sui 极速上手 | Move dApp 极速入门（拾贰）",
@@ -22,7 +32,6 @@ Card.create(%{
   context: "let's move on Sui!",
   space_id: space_sui.id
 })
-
 
 Card.create(%{
   title: "Aptos CLI使用指南与REPL设计建议 | Move dApp 极速入门（六）",
