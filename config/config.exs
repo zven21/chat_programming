@@ -17,6 +17,7 @@ config :chat_programming, ChatProgrammingWeb.Endpoint,
     formats: [html: ChatProgrammingWeb.ErrorHTML, json: ChatProgrammingWeb.ErrorJSON],
     layout: false
   ],
+  check_origin: ["https://dog-chat.gigalixir.app.com"]
   pubsub_server: ChatProgramming.PubSub,
   live_view: [signing_salt: "8Hv+cWMw"]
 
