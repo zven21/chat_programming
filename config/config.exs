@@ -12,11 +12,12 @@ config :chat_programming,
 
 # Configures the endpoint
 config :chat_programming, ChatProgrammingWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "dog-chat.gigalixir.app.com"],
   render_errors: [
     formats: [html: ChatProgrammingWeb.ErrorHTML, json: ChatProgrammingWeb.ErrorJSON],
     layout: false
   ],
+  #check_origin: ["https://dog-chat.gigalixir.app.com"],
   pubsub_server: ChatProgramming.PubSub,
   live_view: [signing_salt: "8Hv+cWMw"]
 
