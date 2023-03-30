@@ -5,8 +5,6 @@ defmodule ChatProgramming.Accounts.User do
   schema "users" do
     field :email, :string
     field :password, :string, virtual: true, redact: true
-    field :nickname, :string
-    field :avatar_url, :string
     field :hashed_password, :string, redact: true
     field :confirmed_at, :naive_datetime
 
