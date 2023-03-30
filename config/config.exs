@@ -17,7 +17,7 @@ config :chat_programming, ChatProgrammingWeb.Endpoint,
     formats: [html: ChatProgrammingWeb.ErrorHTML, json: ChatProgrammingWeb.ErrorJSON],
     layout: false
   ],
-  #check_origin: ["https://dog-chat.gigalixir.app.com"],
+  # check_origin: ["https://dog-chat.gigalixir.app.com"],
   pubsub_server: ChatProgramming.PubSub,
   live_view: [signing_salt: "8Hv+cWMw"]
 
@@ -63,6 +63,8 @@ config :phoenix, :json_library, Jason
 config :petal_components,
        :error_translator_function,
        {ChatProgrammingWeb.CoreComponents, :translate_error}
+
+config :chat_programming, upload_dir: "/tmp/uploads"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

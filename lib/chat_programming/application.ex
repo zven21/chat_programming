@@ -7,6 +7,8 @@ defmodule ChatProgramming.Application do
 
   @impl true
   def start(_type, _args) do
+    ensure_upload_dir_exists()
+
     children = [
       # Start the Telemetry supervisor
       ChatProgrammingWeb.Telemetry,
@@ -33,6 +35,16 @@ defmodule ChatProgramming.Application do
   @impl true
   def config_change(changed, _new, removed) do
     ChatProgrammingWeb.Endpoint.config_change(changed, removed)
+    :ok
+  end
+
+  def ensure_upload_dir_exists() do
+    upload_dir = Application.get_env(:chat_programming, :upload_dir)
+
+    unless File.exists?(upload_dir) do
+      File.mkdir!(upload_dir)
+    end
+
     :ok
   end
 end
