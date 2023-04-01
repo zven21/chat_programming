@@ -64,7 +64,7 @@ config :petal_components,
        :error_translator_function,
        {ChatProgrammingWeb.CoreComponents, :translate_error}
 
-config :chat_programming, upload_dir: "/tmp/uploads"
+# config :chat_programming, upload_dir: "/tmp/uploads"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

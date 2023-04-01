@@ -17,8 +17,10 @@ defmodule ChatProgramming.Uploads do
       [%Upload{}, ...]
 
   """
-  def list_uploads do
-    Repo.all(Upload)
+  def list_uploads(current_user) do
+    Upload
+    |> where(user_id: ^current_user.id)
+    |> Repo.all()
   end
 
   @doc """

@@ -7,7 +7,7 @@ defmodule ChatProgramming.Application do
 
   @impl true
   def start(_type, _args) do
-    ensure_upload_dir_exists()
+    # ensure_upload_dir_exists()
 
     children = [
       # Start the Telemetry supervisor
@@ -38,13 +38,14 @@ defmodule ChatProgramming.Application do
     :ok
   end
 
-  def ensure_upload_dir_exists() do
-    upload_dir = Application.get_env(:chat_programming, :upload_dir)
+  # def ensure_upload_dir_exists() do
+  #   upload_dir = Application.get_env(:chat_programming, :upload_dir)
+  #   link_dir = Path.join([:code.priv_dir(:chat_programming), "static", "uploads"])
 
-    unless File.exists?(upload_dir) do
-      File.mkdir!(upload_dir)
-    end
+  #   unless File.exists?(link_dir) do
+  #     File.ln(upload_dir, link_dir)
+  #   end
 
-    :ok
-  end
+  #   :ok
+  # end
 end
